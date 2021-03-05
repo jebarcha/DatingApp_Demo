@@ -1,5 +1,6 @@
 using System;
 using API.Data;
+using API.Helpers;
 //using API.Helpers;
 using API.Interfaces;
 using API.Services;
@@ -17,6 +18,8 @@ namespace API.Extensions
             IConfiguration config)
         {
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddAutoMapper(typeof(AutoMapperProfiles).Assembly);
             services.AddDbContext<DataContext>(options => 
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
