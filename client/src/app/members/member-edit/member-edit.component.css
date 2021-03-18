@@ -14,3 +14,11 @@
     border-top: none;
 }
 
+.triange-right {
+    width:0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+    border-left: 60px solid #FBD046;
+
+}
