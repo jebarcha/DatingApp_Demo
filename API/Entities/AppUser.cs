@@ -6,7 +6,23 @@ namespace API.Entities
 {
     public class AppUser
     {
-        public int Id { get; set; }
+        public AppUser(int id, string userName, DateTime dateOfBirth, string knownAs, DateTime created, DateTime lastActive, string gender, string introduction, string lookingFor, string interests, string city, string country) 
+        {
+            this.Id = id;
+    this.UserName = userName;
+    this.DateOfBirth = dateOfBirth;
+    this.KnownAs = knownAs;
+    this.Created = created;
+    this.LastActive = lastActive;
+    this.Gender = gender;
+    this.Introduction = introduction;
+    this.LookingFor = lookingFor;
+    this.Interests = interests;
+    this.City = city;
+    this.Country = country;
+   
+        }
+                public int Id { get; set; }
         public string UserName { get; set; }
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
@@ -24,5 +40,8 @@ namespace API.Entities
 
         public ICollection<UserLike> LikedByUsers { get; set; }
         public ICollection<UserLike> LikedUsers { get; set; }
+        
+        public ICollection<Message> MessagesSent { get; set; }
+        public ICollection<Message> MessagesReceived { get; set; }
     }
 }
